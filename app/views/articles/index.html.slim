@@ -1,0 +1,9 @@
+h1
+  p Publicasiones
+ul
+  - @articles.each do |article|
+    li 
+      = link_to article.title, article
+
+div 
+  = link_to "Nueva publicación", new_article_path
