@@ -13,11 +13,11 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    if @object.save
-      flash[:success] = "Object successfully created"
+    if @article.save
+      flash[:success] = "Creado exitosamente"
       redirect_to @article
     else
-      flash[:error] = "Something went wrong"
+      flash[:error] = "Algo salio mal"
       render :new, status: :unprocessable_entity
     end
   end
@@ -39,7 +39,8 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @article.destroy
 
-    redirect_back(fallback_location: articles_path)
+    redirect_to articles_path, status: :see_other
+    #redirect_back(fallback_location: articles_path)
   end
 
   private
