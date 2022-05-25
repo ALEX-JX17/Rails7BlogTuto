@@ -1,9 +1,6 @@
 # README
 # Rails7BlogTuto
-Blog Tutorial of Rails 7
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the Blog Tutorial of Rails 7
 
 Things you may want to cover:
 
@@ -22,6 +19,3 @@ Things you may want to cover:
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-
-* ...
->>>>>>> 8ff8451 (Iniciando el repo Blog, con el modelo de articulos y su CRUD sin css)
