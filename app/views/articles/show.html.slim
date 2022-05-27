@@ -4,9 +4,10 @@ p
     =@article.body
 div
     = link_to "Editar", edit_article_path(@article)
-    = link_to "Destroy", article_path(@article), data: { \
+    = link_to "Eliminar articulo", article_path(@article), data: { \
         turbo_method: :delete, \
         turbo_confirm: "¿Realemte desea eliminar esta publicación?" }
+
 h3 Comentarios
 = render @article.comments
 
