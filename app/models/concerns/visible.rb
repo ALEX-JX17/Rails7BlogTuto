@@ -12,7 +12,7 @@ module Visible
             where(status: 'public').count
         end
     end
-
+    # Instanced Objects methods
     def archived?
         status == 'archived'
     end
