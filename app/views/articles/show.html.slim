@@ -8,19 +8,7 @@ div
         turbo_method: :delete, \
         turbo_confirm: "¿Realemte desea eliminar esta publicación?" }
 h3 Comentarios
-- @article.comments.each do |c|
-    p
-    = c.commenter
-    p 
-    = c.body
+= render @article.comments
 
 h3 Agregar un comentario
-= form_with model: [ @article, @article.comments.build ] do | f |
-    .mb-2
-        = f.label :commenter 
-        = f.text_field :commenter
-    .mb-2
-        = f.label :body
-        = f.text_area :body
-    .mb-2
-        = f.submit "agregar comentario", class: "btn btn-primary"
+= render 'comments/form'
