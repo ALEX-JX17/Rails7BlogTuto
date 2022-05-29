@@ -74,3 +74,7 @@ end
 gem "slim-rails"
 
 gem "cssbundling-rails"
+
+# security update for rack 
+gem "rack", ">= 2.2.3.1"
+
