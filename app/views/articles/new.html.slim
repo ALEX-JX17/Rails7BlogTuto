@@ -1,4 +1,7 @@
-h1
-    p Nueva Publicación
-    
-= render "form", article: @article
+.card.shadow
+    .card-header
+        h1.card-title 
+            p Nueva Publicación
+    .card-body
+        = render "form", article: @article
+               

@@ -36,3 +36,8 @@
 
 .vscode
 >>>>>>> 8ff8451 (Iniciando el repo Blog, con el modelo de articulos y su CRUD sin css)
+
+/app/assets/builds/*
+!/app/assets/builds/.keep
+
+/node_modules

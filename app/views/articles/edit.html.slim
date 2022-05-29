@@ -1,4 +1,6 @@
-h1
-    p Edición de la publicación
-    
-= render "form", article: @article
+.card.shadow
+    .card-header
+        h1.card-title 
+            p Edición de la publicación
+    .card-body    
+        = render "form", article: @article

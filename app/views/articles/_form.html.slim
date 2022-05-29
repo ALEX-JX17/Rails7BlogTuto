@@ -1,18 +1,19 @@
 = form_with model: article do |f|
-    .mb-3
-        = f.label :title
+    .mb-3.row
+        = f.label :title, class: "form-label"
         = f.text_field :title, class: "form-control"
         - @article.errors.full_messages_for(:title).each do |message|
             div
                 = message
-    .mb-3
-        = f.label :body
+    .mb-3.row
+        = f.label :body, class: "form-label"
         = f.text_area :body
         - @article.errors.full_messages_for(:body).each do |message|
             div
                 = message
-    .mb-3
+    .mb-3.row
         = f.label :status, class: "form-label"
-        = f.select :status, ['public', 'private', 'archived'], {selected: 'public'}. { class: "form-select"}
-    .mb-3
-        = f.submit
+        = f.select :status, ['public', 'private', 'archived'], {selected: 'public'}, { class: "form-select"}
+    .mt-3    
+        = f.submit class: "btn btn-primary me-1"
+        = link_to "Articulos", :articles, class: "btn btn-outline-primary" 
