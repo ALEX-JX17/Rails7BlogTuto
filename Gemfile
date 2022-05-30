@@ -78,3 +78,5 @@ gem "cssbundling-rails"
 # security update for rack 
 gem "rack", ">= 2.2.3.1"
 
+gem 'simple_form', ">= 5.1.0"
+
