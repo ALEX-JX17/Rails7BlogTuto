@@ -1,7 +1,7 @@
 = simple_form_for @article do |f|
     = f.input :title
     = f.input :body
-    = f.input :status, collection: ['public', 'private', 'archived'], selected: 'public', input_html: { class: 'form-select'}
-    .mb-3
+    = f.input :status, collection: ['public', 'private', 'archived'],\
+        selected: 'public', input_html: { class: 'form-select mb-3'}
     = f.submit class: "btn btn-primary me-1"
     = link_to "Articulos", :articles, class: "btn btn-outline-primary"

@@ -16,7 +16,10 @@ Things covered:
 * Deployment instructions   (NO YET)
 
 Other Features implemented:
-* CSS framework: bootstrap
+* CSS framework: bootstrap 
+* SASS
+* Slim
+* Simple form
 
 
 
@@ -34,4 +37,3 @@ Other Features implemented:
     Then
     Run bundle install
     Run rails css:install:bootstrap
- 
