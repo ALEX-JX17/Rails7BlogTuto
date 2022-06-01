@@ -1,4 +1,3 @@
-doctype html
 html
   head
     title
@@ -8,5 +7,8 @@ html
     = csp_meta_tag
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
-  body.container.bg-light.bg-gradient
-    = yield
+  body.bg-light.bg-gradient
+    = render "layouts/navigation"
+    .container
+      = yield
+    footer

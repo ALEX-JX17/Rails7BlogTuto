@@ -3,6 +3,9 @@
         = comment.commenter
     p
         = comment.body
-    = link_to "Eliminar comentario", [comment.article, comment], data: { \
+    p
+        = comment.article
+    = link_to "Delete comment", [comment.article, comment], data:{ \
         turbo_method: :delete, \
-        turbo_confirm: "¿Realemte desea eliminar este comentario?" }
+        turbo_confirm: "Do you really want to delete this?" }, \
+        class: "btn btn-outline-danger"

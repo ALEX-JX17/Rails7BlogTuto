@@ -1,0 +1,13 @@
+nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  div.container-fluid
+    = link_to "Home", root_path , class: "navbar-brand"
+    button.navbar-toggler type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" 
+      span.navbar-toggler-icon
+    .collapse.navbar-collapse
+      ul.navbar-nav
+        li.nav-item
+          = link_to "Articles", :articles , class: "nav-link" + nav_class_for_controller('articles')
+        li.nav-item
+          = link_to "Link 2", "#" , class: "nav-link" + nav_class_for_controller('model') 
+        li.nav-item
+          = link_to "Link 3", "#" , class: "nav-link" + nav_class_for_controller('anotherModel')

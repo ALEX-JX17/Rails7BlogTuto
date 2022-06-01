@@ -1,9 +1,9 @@
 .card.shadow
   .card-body
     h1.card-title
-      p Publicaciones
+      p Articles
     p 
-      = "Este Blog de prueba tine " + Article.public_count.to_s + " articulos publicados"
+      = "This Blog has " + Article.public_count.to_s + " public articles"
       ul
         - @articles.each do |article|
           - unless article.archived?
@@ -11,5 +11,5 @@
               = link_to article.title, article
 
       .col-auto
-        = link_to "Nueva publicación", new_article_path, class: "btn btn-primary"
+        = link_to "New", new_article_path, class: "btn btn-primary"
         
