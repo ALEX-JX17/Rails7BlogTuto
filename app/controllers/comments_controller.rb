@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
         @comment = @article.comments.find(params[:id])
         @comment.destroy
         puts "si entro al controlador y destruyo el cometario"
-        redirect_to article_path(@article)
+        redirect_to article_path(@article), status: 303
     end
 
     private
