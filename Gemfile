@@ -73,14 +73,9 @@ end
 
 gem "slim-rails"
 
-# Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
-# gem "jsbundling-rails"
-
-# Bundle and process CSS [https://github.com/rails/cssbundling-rails]#
-# gem "cssbundling-rails"
-
 # security update for rack 
 gem "rack", ">= 2.2.3.1"
 
 gem 'simple_form', ">= 5.1.0"
 
+gem 'bootstrap', '~> 5.1', '>= 5.1.3'
