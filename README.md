@@ -25,15 +25,24 @@ Other Features implemented:
 
 
 -------------- Notes ---------------
-* To install Bootstrap on Rails 7, 
+* To install Bootstrap on Rails 7, firts I used "cssbundling-rails" gem, but I had many conflicts with Turbo stream And I tryed to solve it as many ways but i couldn't so finally instaled Bootstrap using  'bootstrap' gem and Turbo stream worked well.
 
-    I had installed Bootstrap after the proyect was created. I used "cssbundling-rails" gem to did it.
-    To install Bootstrap, firts you need to have installed:
-        Ruby 3.0 or higher
-        Rails 7.0 or higher
-        Node 12.0 or higher
-        Yarn
-        NPM 7.0 or higher
-    Then
-    Run bundle install
-    Run rails css:install:bootstrap
+Instructions for some cases:
+    - Open the file app/assets/stylesheets/applications.css. First of all, rename the file to application.scss and then replace its content by:
+
+        @import "bootstrap";
+
+    - To install the JavaScript parts, go back to your terminal and run:
+
+            ./bin/importmap pin bootstrap
+    
+        This pins (installs) the JavaScript packages “bootstrap” and “@popperjs/core” to your project. To use them in our app, we need to import the into our application.js JavaScript file. So open the file app/assets/javascript/application.js  (Attention: Not the file app/assets/javascript/controllers/application.js )and append the following two lines at the end:
+
+            import "@popperjs/core"
+            import "bootstrap"
+
+        Now all the Bootstrap JavaScript stuff should be working. We will see that later when showing the modal dialog.
+
+        And that's all
+
+Reference: https://nobrainerprogramming.com/rails-7-modal-forms-with-hotwire-and-bootstrap/
