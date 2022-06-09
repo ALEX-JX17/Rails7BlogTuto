@@ -17,7 +17,6 @@ Things covered:
 
 Other Features implemented:
 * CSS framework: bootstrap 
-* SASS
 * Slim
 * Simple form
 
@@ -36,12 +35,12 @@ Instructions for some cases:
 
             ./bin/importmap pin bootstrap
     
-        This pins (installs) the JavaScript packages “bootstrap” and “@popperjs/core” to your project. To use them in our app, we need to import the into our application.js JavaScript file. So open the file app/assets/javascript/application.js  (Attention: Not the file app/assets/javascript/controllers/application.js )and append the following two lines at the end:
+        This pins (installs) the JavaScript packages “bootstrap” and “@popperjs/core” to your project. To use them in our app, we need to import them into our application.js JavaScript file. So open the file app/javascript/application.js  (Attention: Not the file app/javascript/controllers/application.js )and append the following two lines at the end:
 
             import "@popperjs/core"
             import "bootstrap"
 
-        Now all the Bootstrap JavaScript stuff should be working. We will see that later when showing the modal dialog.
+        Now all the Bootstrap JavaScript stuff should be working. 
 
         And that's all
 
