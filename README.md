@@ -28,8 +28,8 @@ Other Features implemented:
 
     Instructions for some cases:
     - Open the file app/assets/stylesheets/applications.css. First of all, rename the file to application.scss and then replace its content by:
-
-        @import "bootstrap";
+            
+            @import "bootstrap";
 
     - To install the JavaScript parts, go back to your terminal and run:
 
@@ -57,7 +57,7 @@ all I done was to use html2slim gem, the steps are:
 *To add Action Text Overview to the proyect in rails 7 just need to follow the default instructions
 in the Rails Guide: https://edgeguides.rubyonrails.org/action_text_overview.html
 
-    -To install run:
+    To install run:
 
         bin/rails action_text:install
 
@@ -68,8 +68,8 @@ in the Rails Guide: https://edgeguides.rubyonrails.org/action_text_overview.html
 
     At the bigining of app/assets/stylesheets/application.scss and after that all the style was working well.
 
-    - Error at print the edited text on the show.
-        When I wanted to print the edited text in a view using slim it didn't work, because it printed the HMTL code and no the procesed text just doing:
+    Error at print the edited text on the show.
+    When I wanted to print the edited text in a view using slim it didn't work, because it printed the HMTL code and no the procesed text just doing:
             
             = @article.content
 
