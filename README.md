@@ -26,7 +26,7 @@ Other Features implemented:
 -------------- Notes ---------------
 * To install Bootstrap on Rails 7, firts I used "cssbundling-rails" gem, but I had many conflicts with Turbo stream And I tryed to solve it as many ways but i couldn't so finally instaled Bootstrap using  'bootstrap' gem and Turbo stream worked well.
 
-Instructions for some cases:
+    Instructions for some cases:
     - Open the file app/assets/stylesheets/applications.css. First of all, rename the file to application.scss and then replace its content by:
 
         @import "bootstrap";
@@ -44,4 +44,37 @@ Instructions for some cases:
 
         And that's all
 
-Reference: https://nobrainerprogramming.com/rails-7-modal-forms-with-hotwire-and-bootstrap/
+        Reference: https://nobrainerprogramming.com/rails-7-modal-forms-with-hotwire-and-bootstrap/
+
+*After add gem "slim-rails" to the Gemfile I needed to convert all .erb file to .slim and to do that
+all I done was to use html2slim gem, the steps are:
+
+    $ gem install html2slim
+    $ erb2slim app/ -d
+
+    And that's all
+
+*To add Action Text Overview to the proyect in rails 7 just need to follow the default instructions
+in the Rails Guide: https://edgeguides.rubyonrails.org/action_text_overview.html
+
+    -To install run:
+
+        bin/rails action_text:install
+
+    And all the job shoould been done but I have a problem with the final style, to solve it just
+    add:
+
+        @import "actiontext.css";
+
+    At the bigining of app/assets/stylesheets/application.scss and after that all the style was working well.
+
+    - Error at print the edited text on the show.
+        When I wanted to print the edited text in a view using slim it didn't work, because it printed the HMTL code and no the procesed text just doing:
+            
+            = @article.content
+
+        but it was easy to solve, just adding a double "="
+
+            == @article.content
+
+        That printed the procesed HTML and solved my problem, I feel it isn't an elegant solution but works to me.

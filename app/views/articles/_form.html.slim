@@ -1,6 +1,31 @@
+/ = form_with model: article do |form|
+/     - if article.errors.any?
+/         div style="color: red">
+/             h2
+/                 = pluralize(person.errors.count, "error")
+/             ul
+/                 - article.errors.each do |error|
+/                     li
+/                         = error.full_message
+/     div
+/         = form.label :title, style: "display: block"
+/         = form.text_field :title
+
+/     div
+/         = form.label :content, style: "display: block"
+/         = form.rich_text_area :content
+
+/     div 
+/         = form.label :status, style: "display: block"
+/         = form.select :status, ['public', 'private', 'archived'], selected: 'public'
+/     div
+/         = form.submit class: "btn btn-primary me-1"
+/         = link_to "Cancel", @article, class: "btn btn-outline-primary"
+
+
 = simple_form_for @article do |f|
     = f.input :title
-    = f.input :body
+    = f.rich_text_area :content
     = f.input :status, collection: ['public', 'private', 'archived'],\
         selected: 'public', input_html: { class: 'form-select mb-3'}
     = f.submit class: "btn btn-primary me-1"
