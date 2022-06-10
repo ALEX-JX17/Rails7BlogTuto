@@ -20,7 +20,7 @@
 for i in 1..5
     Article.create(
         title: "Article Title #{i}", 
-        body: "Body for article #{i}", 
+        content: "<div class='trix-content'><div>Comment to article #{i} <strong> nothing </strong>",
         status: "public"
         ).comments.create([{
             commenter: "Commenter A", 

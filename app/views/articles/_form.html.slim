@@ -24,7 +24,7 @@
 
 
 = simple_form_for @article do |f|
-    = f.input :title
+    =<> f.input :title
     = f.rich_text_area :content
     = f.input :status, collection: ['public', 'private', 'archived'],\
         selected: 'public', input_html: { class: 'form-select mb-3'}
