@@ -24,7 +24,7 @@ Other Features implemented:
 
 
 -------------- Notes ---------------
-* To install Bootstrap on Rails 7, firts I used "cssbundling-rails" gem, but I had many conflicts with Turbo stream And I tryed to solve it as many ways but i couldn't so finally instaled Bootstrap using  'bootstrap' gem and Turbo stream worked well.
+* Bootstrap. To install Bootstrap on Rails 7, firts I used "cssbundling-rails" gem, but I had many conflicts with Turbo stream And I tryed to solve it as many ways but i couldn't so finally instaled Bootstrap using  'bootstrap' gem and Turbo stream worked well.
 
     Instructions for some cases:
     - Open the file app/assets/stylesheets/applications.css. First of all, rename the file to application.scss and then replace its content by:
@@ -46,7 +46,7 @@ Other Features implemented:
 
         Reference: https://nobrainerprogramming.com/rails-7-modal-forms-with-hotwire-and-bootstrap/
 
-*After add gem "slim-rails" to the Gemfile I needed to convert all .erb file to .slim and to do that
+* Slim. After add gem "slim-rails" to the Gemfile I needed to convert all .erb file to .slim and to do that
 all I done was to use html2slim gem, the steps are:
 
     $ gem install html2slim
@@ -54,27 +54,44 @@ all I done was to use html2slim gem, the steps are:
 
     And that's all
 
-*To add Action Text Overview to the proyect in rails 7 just need to follow the default instructions
-in the Rails Guide: https://edgeguides.rubyonrails.org/action_text_overview.html
+* Action Text. To add Action Text Overview to the proyect in rails 7 just need to follow the default instructions from Rails Guide: https://edgeguides.rubyonrails.org/action_text_overview.html
 
     To install run:
-
+    
         bin/rails action_text:install
 
-    And all the job shoould been done but I have a problem with the final style, to solve it just
-    add:
+After installed it I have a problem with the final style, to solve it are several options. The most simple is to move 
 
         @import "actiontext.css";
 
-    At the bigining of app/assets/stylesheets/application.scss and after that all the style was working well.
+At the bigining of app/assets/stylesheets/application.scss and after that all the style was working well. But I feel is not a well solution so I found other alternatives, one option is add actiontext direct in the aplication layout, app/views/layouts/application.html.slim
 
-    Error at print the edited text on the show.
-    When I wanted to print the edited text in a view using slim it didn't work, because it printed the HMTL code and no the procesed text just doing:
-            
-            = @article.content
+    = stylesheet_link_tag "actiontext", "data-turbo-track": "reload"
 
-        but it was easy to solve, just adding a double "="
+And adding in app/assets/config/manifest.js this line:
 
-            == @article.content
+    //= link actiontext.css
 
-        That printed the procesed HTML and solved my problem, I feel it isn't an elegant solution but works to me.
+Some one else was able to resolve it by simply running the build commands defined in package.json
+
+    yarn build
+    yarn build:css
+
+The last solution I found was to prepare the new added css and javascript runing:
+
+    rails css:build 
+    rails javascript:build
+
+just to be safe. 
+Reference: https://github.com/rails/rails/issues/43441
+
+I got an error printing the saved rich text on the show. When I wanted to print the edited text in a view using slim it didn't work, because it printed the HMTL code instead the procesed code text.
+        
+        #Did not work
+        = @article.content
+
+but it was easy to solve, just adding a double "="
+
+        == @article.content
+
+That printed the procesed HTML and solved my problem, I feel it isn't an elegant solution but works to me.
