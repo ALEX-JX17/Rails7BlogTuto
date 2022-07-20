@@ -74,8 +74,11 @@ end
 gem "slim-rails"
 
 # security update for rack 
-gem "rack", ">= 2.2.3.1"
+gem "rack", "= 2.2.3.1"
 
-gem 'simple_form', ">= 5.1.0"
+gem 'simple_form', "= 5.1.0"
 
-gem 'bootstrap', '~> 5.1', '>= 5.1.3'
+gem 'bootstrap', '~> 5.1', '= 5.1.3'
+
+# security update 19-07-2022
+gem "activerecord", "= 7.0.3.1"
